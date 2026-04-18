@@ -9,7 +9,7 @@ public class database_Connection {
             +"?ssl=TRUE"
             + "&sslMode=REQUIRED";
     private static final String USER = "avnadmin";
-    private static final String PASSWORD = "AVNS_kVqtt4Tupss6wsBunzK";
+    private static final String PASSWORD = "ask the chosen one for the pass";
     
 
     public static Connection getConnection() throws SQLException {
