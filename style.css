@@ -1,0 +1,80 @@
+/* style.css */
+
+/* Background for the whole screen */
+.root {
+    -fx-background-color: #121212; /* Deep black */
+    -fx-font-family: "Arial";
+    -fx-alignment: TOP_LEFT;
+}
+
+/* --- LEFT PANEL CATEGORY BUTTONS --- */
+.left-panel-button {
+    -fx-background-color: #ffcc00; /* Fast food yellow */
+    -fx-text-fill: #1a1a1a;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-min-width: 120px;
+    -fx-min-height: 60px;
+    -fx-cursor: hand;
+}
+
+.left-panel-button:pressed {
+    -fx-background-color: #e6b800;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* --- MIDDLE PANEL PRODUCT BUTTONS --- */
+.middle-panel-button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 10;
+    -fx-border-color: #27ae60;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-text-alignment: center;
+}
+
+.middle-panel-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* --- SYSTEM BUTTONS (Submit, Clear, Badge) --- */
+.submit-button {
+    -fx-background-radius: 25;
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.order-badge {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 50;
+    -fx-min-width: 22;
+    -fx-min-height: 22;
+    -fx-alignment: center;
+    -fx-font-size: 11;
+    -fx-font-weight: bold;
+}
+
+.clear-button {
+    -fx-background-radius: 10;
+    -fx-background-color: #ffcc00;
+    -fx-text-fill: #1a1a1a;
+}
+
+.summary-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.confirm-button {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
