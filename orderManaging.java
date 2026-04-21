@@ -1,5 +1,4 @@
 package bobosinoe;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -172,12 +171,20 @@ public class OrderManaging extends Application {
 
             String itemSql = "INSERT INTO ordered_items (orderId, productId, quantity, price) VALUES (?, ?, ?, ?)";
             try (PreparedStatement itemPs = connection.prepareStatement(itemSql)) {
+                List<Integer> added = new ArrayList<>();
                 for (Product p : currentOrder) {
-                    itemPs.setInt(1, orderId);
-                    itemPs.setInt(2, p.productId);
-                    itemPs.setInt(3, 1);
-                    itemPs.setDouble(4, p.price);
-                    itemPs.addBatch();
+                    if (!added.contains(p.productId)) {
+                        int qty = 0;
+                        for (Product p2 : currentOrder) {
+                            if (p2.productId == p.productId) qty++;
+                        }
+                        itemPs.setInt(1, orderId);
+                        itemPs.setInt(2, p.productId);
+                        itemPs.setInt(3, qty);
+                        itemPs.setDouble(4, p.price);
+                        itemPs.addBatch();
+                        added.add(p.productId);
+                    }
                 }
                 itemPs.executeBatch();
             }
@@ -231,9 +238,3 @@ public class OrderManaging extends Application {
     public static void main(String[] args) { launch(args); }
 }
 
-class Product {
-    public int productId; public String productName; public double price; public int quantity;
-    public Product(int productId, String productName, double price, int quantity) {
-        this.productId = productId; this.productName = productName; this.price = price; this.quantity = quantity;
-    }
-}
