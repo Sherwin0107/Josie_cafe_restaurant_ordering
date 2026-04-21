@@ -17,7 +17,3 @@ Access our project via
 ```
 javac
 ```
-
-```
-https://www.facebook.com/sherwin.cari/photos
-```
